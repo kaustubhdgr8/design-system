@@ -18,7 +18,7 @@ module.exports = function (grunt) {
       html: {
         expand: true,
         flatten: true,
-        src: ['src/templates/index.html'],
+        src: ['src/templates/index.html', 'src/templates/404.html'],
         dest: 'public/'
       },
       css: {
@@ -70,9 +70,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: 'src/css',
-          src: ['styles.scss'],
-          dest: '.',
-          ext: '.css'
+          src: ['**/*.scss'],
+          dest: './styles.css'
         }]
       }
     },
@@ -89,19 +88,19 @@ module.exports = function (grunt) {
         tasks: ['jshint']
       },
       js: {
-        files: ['src/js/**/*', '!src/js/**/*.min.js'],
+        files: ['src/js/**/*', '!src/js/main.min.js', '!src/js/**/*.min.js'],
         tasks: ['compile--js', 'build']
       },
       handlebar: {
-        files: ['src/**/*'],
+        files: ['src/templates/**/*.hbs'],
         tasks: ['compile--js', 'build']
       },
       css: {
-        files: ['src/**/*'],
+        files: ['src/css/**/*.scss'],
         tasks: ['compile--css', 'build']
       },
       html: {
-        files: ['src/**/*'],
+        files: ['src/templates/*.html', '!src/templates/index.html'],
         tasks: ['compile--html', 'build']
       }
     }
