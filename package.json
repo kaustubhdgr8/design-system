@@ -4,7 +4,8 @@
   "description": "Design system containing reusable components built on Sass, Handlebars & JS",
   "main": "main.js",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "build": "grunt release"
   },
   "repository": {
     "type": "git",

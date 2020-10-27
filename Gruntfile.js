@@ -118,6 +118,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
 
   grunt.registerTask('default', ['compile', 'build', 'watch']);
+  grunt.registerTask('release', ['compile', 'build']);
   grunt.registerTask('compile', ['compile--js', 'compile--css', 'compile--html']);
   grunt.registerTask('compile--js', ['jshint', 'handlebars', 'concat', 'uglify']);
   grunt.registerTask('compile--css', ['sass', 'cssmin', 'htmlmin']);
